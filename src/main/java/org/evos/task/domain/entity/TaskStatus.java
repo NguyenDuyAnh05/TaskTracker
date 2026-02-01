@@ -1,0 +1,7 @@
+package org.evos.task.domain.entity;
+
+public enum TaskStatus{
+    OPEN,
+    COMPLETED,
+}
+
