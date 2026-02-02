@@ -31,8 +31,8 @@ public class Task {
     private TaskStatus status;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "pritority", nullable = false)
-    private TaskPriority pritority;
+    @Column(name = "priority", nullable = false)
+    private TaskPriority priority;
 
     @Column(name = "created", nullable = false, updatable = false)
     private Instant created;
@@ -49,7 +49,7 @@ public class Task {
         this.description = description;
         this.dueDate = dueDate;
         this.status = status;
-        this.pritority = pritority;
+        this.priority = pritority;
         this.created = created;
         this.updated = updated;
     }
@@ -94,12 +94,12 @@ public class Task {
         this.status = status;
     }
 
-    public TaskPriority getPritority() {
-        return pritority;
+    public TaskPriority getPriority() {
+        return priority;
     }
 
-    public void setPritority(TaskPriority pritority) {
-        this.pritority = pritority;
+    public void setPriority(TaskPriority pritority) {
+        this.priority = pritority;
     }
 
     public Instant getCreated() {
@@ -138,7 +138,7 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", dueDate=" + dueDate +
                 ", status=" + status +
-                ", pritority=" + pritority +
+                ", pritority=" + priority +
                 ", created=" + created +
                 ", updated=" + updated +
                 '}';
