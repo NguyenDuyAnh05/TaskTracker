@@ -1,8 +1,10 @@
 package org.evos.task.domain.mapper.impl;
 
 import org.evos.task.domain.CreateTaskRequest;
+import org.evos.task.domain.UpdateTaskRequest;
 import org.evos.task.domain.dto.CreateTaskRequestDto;
 import org.evos.task.domain.dto.TaskDto;
+import org.evos.task.domain.dto.UpdateTaskRequestDto;
 import org.evos.task.domain.entity.Task;
 import org.evos.task.domain.mapper.TaskMapper;
 import org.springframework.stereotype.Component;
@@ -17,6 +19,17 @@ public class TaskMapperImpl implements TaskMapper {
             dto.description(),
             dto.dueDate(),
             dto.priority()
+    );
+  }
+
+  @Override
+  public UpdateTaskRequest fromDto(UpdateTaskRequestDto dto) {
+    return new UpdateTaskRequest(
+        dto.title(),
+        dto.description(),
+        dto.dueDate(),
+        dto.status(),
+        dto.priority()
     );
   }
 
