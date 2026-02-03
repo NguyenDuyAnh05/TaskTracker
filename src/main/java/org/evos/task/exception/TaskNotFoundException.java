@@ -11,4 +11,8 @@ public class TaskNotFoundException extends RuntimeException {
         String.format("Task with id '%s' does not exist!", id)
     );
   }
+
+  public UUID getId() {
+    return id;
+  }
 }
