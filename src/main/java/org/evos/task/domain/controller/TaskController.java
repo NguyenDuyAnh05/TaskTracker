@@ -47,7 +47,6 @@ public class TaskController {
   }
 
   @PutMapping(path ="/{taskId}")
-
   public ResponseEntity<TaskDto> updateTask(
       @Valid @RequestBody UpdateTaskRequestDto dto, @PathVariable UUID taskId
       ){
@@ -57,8 +56,8 @@ public class TaskController {
     return ResponseEntity.ok(taskDto);
   }
 
-  @DeleteMapping(path = "taskId")
-  public ResponseEntity<TaskDto> deleteTaskDto(@PathVariable UUID taskId){
+  @DeleteMapping(path = "{/taskId}")
+  public ResponseEntity<Void> deleteTaskDto(@PathVariable UUID taskId){
     service.deleteTask(taskId);
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
